@@ -6,6 +6,7 @@
 local colors = {
   blue   = '#80a0ff',
   cyan   = '#79dac8',
+  green  = "#aef359",
   black  = '#080808',
   white  = '#c6c6c6',
   red    = '#ff5189',
@@ -14,21 +15,20 @@ local colors = {
 }
 
 local bubbles_theme = {
-  normal  = {
+  normal   = {
     a = { fg = colors.black, bg = colors.violet },
     b = { fg = colors.white, bg = colors.grey },
     c = { fg = colors.black, bg = colors.black },
   },
-  command = {
-    a = { fg = colors.black, bg = colors.violet },
+  command  = {
+    a = { fg = colors.black, bg = colors.green },
     b = { fg = colors.white, bg = colors.grey },
     c = { fg = colors.black, bg = colors.black },
   },
 
-
-  insert = { a = { fg = colors.black, bg = colors.blue } },
-  visual = { a = { fg = colors.black, bg = colors.cyan } },
-  replace = { a = { fg = colors.black, bg = colors.red } },
+  insert   = { a = { fg = colors.black, bg = colors.blue } },
+  visual   = { a = { fg = colors.black, bg = colors.cyan } },
+  replace  = { a = { fg = colors.black, bg = colors.red } },
 
   inactive = {
     a = { fg = colors.white, bg = colors.black },
@@ -46,10 +46,10 @@ require('lualine').setup {
     lualine_a = {
       { 'mode', right_padding = 2 },
     },
-    lualine_b = { 'filename', 'branch' },
-    lualine_c = { 'fileformat' },
-    lualine_x = {},
-    lualine_y = { 'filetype', 'progress' },
+    lualine_b = { 'filename' },
+    lualine_c = {},
+    lualine_x = { 'diagnostics' },
+    lualine_y = { 'branch', 'diff', 'progress' },
     lualine_z = {
       { 'location', left_padding = 2 },
     },

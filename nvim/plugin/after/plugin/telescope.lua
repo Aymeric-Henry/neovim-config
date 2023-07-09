@@ -5,4 +5,10 @@ vim.keymap.set('n', '<leader>ns', function()
   builtin.grep_string({ search = vim.fn.input("Grep > ") })
 end)
 vim.keymap.set('n', '<leader>vh', builtin.help_tags, {})
+
+
+vim.keymap.set('n', '<leader>nb', builtin.buffers, {})
+vim.keymap.set('n', '<leader>nk', ":bprevious<CR>")
+vim.keymap.set('n', '<leader>nj', ":bnext<CR>")
+
 require("telescope").load_extension('harpoon')

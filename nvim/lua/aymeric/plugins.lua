@@ -79,7 +79,16 @@ local plugins = {
     dependencies = "nvim-lua/plenary.nvim"
   },
   { "mbbill/undotree" },
-  { "tpope/vim-fugitive" }
+  { "lukas-reineke/indent-blankline.nvim" },
+  { "tpope/vim-fugitive" },
+  { "tpope/vim-commentary" },
+  {
+    'echasnovski/mini.pairs',
+    version = '*'
+  }, {
+  'nvim-lualine/lualine.nvim',
+  dependencies = { "nvim-lualine/lualine.nvim", "nvim-tree/nvim-web-devicons" }
+}
 }
 
 local opts = {

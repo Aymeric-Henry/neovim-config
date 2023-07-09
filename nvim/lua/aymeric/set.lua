@@ -3,6 +3,13 @@ vim.opt.guicursor = ""
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
+cursorColor = "#888888"
+
+vim.api.nvim_set_hl(0, 'LineNr', { fg = cursorColor })
+vim.api.nvim_set_hl(0, 'CursorLineNr', { fg = cursorColor })
+vim.api.nvim_set_hl(0, 'LineNrAbove', { fg = cursorColor })
+vim.api.nvim_set_hl(0, 'LineNrBelow', { fg = cursorColor })
+
 vim.opt.tabstop = 2
 vim.opt.softtabstop = 2
 vim.opt.shiftwidth = 2
