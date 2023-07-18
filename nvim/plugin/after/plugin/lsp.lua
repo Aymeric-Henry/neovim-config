@@ -6,6 +6,8 @@ lsp.ensure_installed({
   'tsserver',
   'eslint',
   'rust_analyzer',
+  'jsonls',
+  'svelte'
 })
 
 local cmp = require('cmp')
@@ -22,6 +24,24 @@ cmp_mappings['<S-Tab>'] = nil
 
 lsp.setup_nvim_cmp({
   mapping = cmp_mappings
+})
+
+local cmp = require('cmp')
+local cmp_action = require('lsp-zero').cmp_action()
+
+require('luasnip.loaders.from_vscode').lazy_load()
+
+cmp.setup({
+  sources = {
+    { name = 'path' },
+    { name = 'nvim_lsp' },
+    { name = 'buffer',  keyword_length = 3 },
+    { name = 'luasnip', keyword_length = 2 },
+  },
+  mapping = {
+    ['<C-f>'] = cmp_action.luasnip_jump_forward(),
+    ['<C-b>'] = cmp_action.luasnip_jump_backward(),
+  }
 })
 
 lsp.on_attach(function(client, bufnr)
@@ -43,6 +63,8 @@ lsp.format_on_save({
     ['rust_analyzer'] = { 'rust' },
     ['tsserver'] = { 'ts', 'tsx' },
     ['eslint'] = { 'ts', 'tsx', 'js', 'jsx' },
+    ['json'] = { 'jsonls' },
+    ['svelte'] = { 'svelte' }
   }
 })
 

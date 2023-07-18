@@ -18,7 +18,7 @@ local plugins = {
 
       configs.setup({
         ensure_installed = { "c", "lua", "vim", "vimdoc", "javascript", "python", "go", "typescript", "rust", "html",
-          "markdown", "bash", "gomod" },
+          "markdown", "bash", "gomod", "svelte" },
         sync_install = false,
         highlight = { enable = true },
         indent = { enable = true },
@@ -88,8 +88,7 @@ local plugins = {
   }, {
   'nvim-lualine/lualine.nvim',
   dependencies = { "nvim-lualine/lualine.nvim", "nvim-tree/nvim-web-devicons" }
-}
-}
+}, }
 
 local opts = {
   style = "moon"
