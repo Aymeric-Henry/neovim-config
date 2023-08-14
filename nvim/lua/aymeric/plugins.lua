@@ -69,29 +69,90 @@ local plugins = {
       { 'williamboman/mason-lspconfig.nvim' }, -- Optional
 
       -- Autocompletion
-      { 'hrsh7th/nvim-cmp' },     -- Required
+      {
+        'hrsh7th/nvim-cmp',
+        config = function()
+          require 'cmp'.setup {
+            sources = {
+              { name = 'luasnip' },
+              -- more sources
+            },
+          }
+        end
+      },                          -- Required
       { 'hrsh7th/cmp-nvim-lsp' }, -- Required
-      { 'L3MON4D3/LuaSnip' },     -- Required
+      { 'hrsh7th/cmp-buffer' },
+      { 'hrsh7th/cmp-path' },
+      { 'saadparwaiz1/cmp_luasnip' },
     }
+
+
   },
   {
     "ThePrimeagen/harpoon",
     dependencies = "nvim-lua/plenary.nvim"
   },
+  {
+    'L3MON4D3/LuaSnip',
+    event = "VeryLazy",
+    dependencies = {
+      { "honza/vim-snippets" }
+    }
+  }, -- Required
   { "mbbill/undotree" },
   { "lukas-reineke/indent-blankline.nvim" },
   { "tpope/vim-fugitive" },
-  { "tpope/vim-commentary" },
+  {
+    'numToStr/Comment.nvim',
+    opts = {
+      -- add any options here
+    },
+    lazy = false,
+  },
+  { 'echasnovski/mini.nvim', version = '*' },
   {
     'echasnovski/mini.pairs',
     version = '*'
   }, {
   'nvim-lualine/lualine.nvim',
   dependencies = { "nvim-lualine/lualine.nvim", "nvim-tree/nvim-web-devicons" }
-}, }
+},
+  {
+    'laytan/tailwind-sorter.nvim',
+    dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-lua/plenary.nvim' },
+    build = 'cd formatter && npm i && npm run build',
+    config = true,
+  },
+  {
+    "kylechui/nvim-surround",
+    version = "*", -- Use for stability; omit to use `main` branch for the latest features
+    event = "VeryLazy",
+    config = function()
+      require("nvim-surround").setup({
+        -- Configuration here, or leave empty to use defaults
+      })
+    end
+  },
+  {
+    'Wansmer/treesj',
+    keys = { '<space>m', '<space>j', '<space>s' },
+    dependencies = { 'nvim-treesitter/nvim-treesitter' },
+    config = function()
+      require('treesj').setup({
+        max_join_length = 22220,
+      })
+    end,
+  },
+  { 'APZelos/blamer.nvim' },
+  {
+    'nvim-telescope/telescope-fzf-native.nvim',
+    build =
+    'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build'
+  }
+}
 
 local opts = {
   style = "moon"
 }
 
-require("lazy").setup(plugins, opt)
+require("lazy").setup(plugins, opts)
