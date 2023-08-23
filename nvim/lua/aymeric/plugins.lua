@@ -135,7 +135,7 @@ local plugins = {
   },
   {
     'Wansmer/treesj',
-    keys = { '<space>f', '<space>j', '<space>k' },
+    keys = { '<space>a', '<space>z', '<space>e' },
     dependencies = { 'nvim-treesitter/nvim-treesitter' },
     config = function()
       require('treesj').setup({
@@ -143,7 +143,25 @@ local plugins = {
       })
     end,
   },
+  {
+    "folke/trouble.nvim",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    opts = {
+      -- your configuration comes here
+      -- or leave it empty to use the default settings
+      -- refer to the configuration section below
+    },
+  },
+  {
+    "folke/zen-mode.nvim",
+    opts = {
+      -- your configuration comes here
+      -- or leave it empty to use the default settings
+      -- refer to the configuration section below
+    }
+  },
   { 'APZelos/blamer.nvim' },
+  ("nvim-treesitter/nvim-treesitter-context"),
   {
     'nvim-telescope/telescope-fzf-native.nvim',
     build =
