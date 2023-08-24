@@ -2,7 +2,7 @@ vim.g.mapleader = " "
 
 vim.keymap.set("n", "<leader>nn", vim.cmd.Ex)
 vim.keymap.set("n", "<leader>l", vim.cmd.Lazy)
-
+vim.keymap.set("n", "<leader>t", "<cmd> lua require('treesj').toggle()<CR>")
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")

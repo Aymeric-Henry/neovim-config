@@ -135,7 +135,7 @@ local plugins = {
   },
   {
     'Wansmer/treesj',
-    keys = { '<space>a', '<space>z', '<space>e' },
+    keys = { '<space>z', '<space>e', '<space>rr' },
     dependencies = { 'nvim-treesitter/nvim-treesitter' },
     config = function()
       require('treesj').setup({
