@@ -1,6 +1,7 @@
 FILE_PATH=$(pwd)
 brew install nvim
 brew install ripgrep
+brew install gnu-sed
 
 mkdir -p ~/.config/nvim
 rm -rf  ~/.config/nvim/lua

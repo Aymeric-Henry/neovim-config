@@ -43,10 +43,8 @@ require('lualine').setup {
     component_separators = '|',
   },
   sections = {
-    lualine_a = {
-      { 'mode', right_padding = 2 },
-    },
-    lualine_b = { 'filename' },
+    lualine_a = { { 'mode', right_padding = 2 } },
+    lualine_b = { 'filename', { 'filename', path = 1 } },
     lualine_c = {},
     lualine_x = { 'diagnostics' },
     lualine_y = { 'branch', 'diff', 'progress' },

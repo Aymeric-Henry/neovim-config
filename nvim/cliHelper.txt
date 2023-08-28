@@ -1,0 +1,1 @@
+find . -type f -name '*.ts'| xargs gsed -i 's/\* as grpcWeb/grpcWeb/g'
