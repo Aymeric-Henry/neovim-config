@@ -32,7 +32,7 @@ lsp.format_on_save({
     ['tsserver'] = { 'ts', 'tsx' },
     ['eslint'] = { 'ts', 'tsx', 'js', 'jsx' },
     ['json'] = { 'jsonls' },
-    ['svelte'] = { 'svelte' }
+    ['svelte'] = { 'svelte' },
   }
 })
 
