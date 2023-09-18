@@ -8,6 +8,7 @@ lsp.ensure_installed({
   'jsonls',
   'svelte',
   'tailwindcss',
+  'gopls',
 })
 
 
@@ -27,6 +28,7 @@ lsp.format_on_save({
     timeout_ms = 10000,
   },
   servers = {
+    ["gopls"] = { 'go' },
     ['lua_ls'] = { 'lua' },
     ['rust_analyzer'] = { 'rust' },
     ['tsserver'] = { 'ts', 'tsx' },
