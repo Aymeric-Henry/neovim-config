@@ -1,0 +1,103 @@
+# Function
+snippet fun "function"
+	function ${1:function_name}(${2}) {
+		${0:${VISUAL}}
+	}
+
+# Asynchronous Function
+snippet asf "async function"
+	async function ${1:function_name}(${2}) {
+		${0:${VISUAL}}
+	}
+
+# Flow control
+# if
+snippet if "if (condition) { ... }"
+	if (${1:true}) {
+		${0:${VISUAL}}
+	}
+
+# if ... else
+snippet ife "if (condition) { ... } else { ... }"
+	if (${1:true}) {
+		${0:${VISUAL}}
+	} else {
+		${2}
+	}
+
+# switch
+snippet switch
+	switch (${1:expression}) {
+		case '${3:case}':
+			${4}
+			break;
+		${0}
+		default:
+			${2}
+	}
+snippet case "case 'xyz': ... break"
+	case '${1:case}':
+		${0:${VISUAL}}
+		break;
+snippet try "try { ... } catch(e) { ... }"
+	try {
+		${0:${VISUAL}}
+	} catch (${1:e}) {
+		${2:/* handle error */}
+	}
+
+
+snippet class
+	class ${1} {
+		constructor(${2}) {
+			${0:${VISUAL}}
+		}
+	}
+
+snippet =>
+	(${1}) => {
+		${0:${VISUAL}}
+	}
+snippet af "() =>"
+	(${1}) => ${0:${VISUAL}}
+
+  snippet as "async"
+	async ${0}
+snippet aw "await"
+	await ${0:${VISUAL}}
+
+
+snippet lg "console.log"
+  console.log(${0})
+
+snippet lga "console.log"
+  console.log("===========$TM_FILENAME:$TM_LINE_NUMBER============")
+  console.log(${0})
+  console.log("========Aymeric========")
+
+snippet np "new Promise"
+	new Promise((res, rej) => {
+			${0:${VISUAL}}
+		})
+
+snippet sif "svelte if"
+	{#if ${1}}
+		${2}
+	{/if}
+
+
+snippet sife "svelte if"
+	{#if ${1}}
+		${2}
+	{:else}
+		${0:${VISUAL}}
+	{/if}
+
+snippet scons "svelte const"
+	{@const = ${1}}
+	${0:${VISUAL}}
+
+snippet seach "svelte each"
+	{#each ${1} as ${2} (${3})}
+		${0:${VISUAL}}
+	{/each}
