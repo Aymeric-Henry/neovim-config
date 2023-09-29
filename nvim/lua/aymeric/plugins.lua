@@ -168,7 +168,14 @@ local plugins = {
     'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build'
   },
   { 'lewis6991/gitsigns.nvim' },
-  { 'AndrewRadev/tagalong.vim' }
+  { 'AndrewRadev/tagalong.vim' },
+  {
+    'tpope/vim-dadbod',
+    dependencies = {
+      'kristijanhusak/vim-dadbod-ui',
+      'kristijanhusak/vim-dadbod-completion'
+    }
+  }
 }
 
 local opts = {

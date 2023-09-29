@@ -2,6 +2,11 @@ local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>nf', builtin.find_files, {})
 vim.keymap.set('n', '<leader>ng', builtin.git_files, {})
 vim.keymap.set('n', '<leader>ns', function()
+  builtin.grep_string({ search = vim.fn.input("Grep > ") })
+end)
+
+
+vim.keymap.set('n', '<leader>nw', function()
   local current_word = vim.call('expand', '<cword>')
   builtin.grep_string({ search = vim.fn.input("Grep > ", current_word) })
 end)

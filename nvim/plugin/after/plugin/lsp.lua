@@ -9,6 +9,8 @@ lsp.ensure_installed({
   'svelte',
   'tailwindcss',
   'gopls',
+  'html',
+  "sqlls"
 })
 
 
@@ -35,6 +37,8 @@ lsp.format_on_save({
     ['eslint'] = { 'ts', 'tsx', 'js', 'jsx' },
     ['json'] = { 'jsonls' },
     ['svelte'] = { 'svelte' },
+    ['html'] = { 'html' },
+    ['sqlls'] = { 'sql' }
   }
 })
 
@@ -48,10 +52,11 @@ require("luasnip.loaders.from_snipmate").load({ paths = "~/.config/nvim/snippets
 
 cmp.setup({
   sources = {
-    { name = 'path' },
-    { name = 'nvim_lsp' },
-    { name = 'buffer',  keyword_length = 3 },
-    { name = "luasnip" }
+    { name = "luasnip",               priority = 1 },
+    { name = 'nvim_lsp',              priority = 2 },
+    { name = 'path',                  priority = 3 },
+    { name = "vim-dadbod-completion", priority = 4 },
+    { name = 'buffer',                keyword_length = 3, priority = 5 },
   },
   preselect = 'item',
   completion = {
