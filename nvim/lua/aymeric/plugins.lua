@@ -175,11 +175,25 @@ local plugins = {
       'kristijanhusak/vim-dadbod-ui',
       'kristijanhusak/vim-dadbod-completion'
     }
-  }
+  },
+  { "kshenoy/vim-signature" },
+  {
+    "folke/noice.nvim",
+    event = "VeryLazy",
+    opts = {
+      -- add any options here
+    },
+    dependencies = {
+      -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+      "MunifTanjim/nui.nvim",
+    }
+  },
+  { "yamatsum/nvim-cursorline" },
+
+
 }
 
 local opts = {
   style = "moon"
 }
-
 require("lazy").setup(plugins, opts)

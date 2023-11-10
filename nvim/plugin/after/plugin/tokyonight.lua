@@ -1,5 +1,3 @@
--- tototoot
-
 require("tokyonight").setup {
   style = "night",
   on_colors = function(colors)
