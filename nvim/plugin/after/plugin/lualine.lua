@@ -37,6 +37,17 @@ local bubbles_theme = {
   },
 }
 
+
+
+local function show_macro_recording()
+  local recording_register = vim.fn.reg_recording()
+  if recording_register == "" then
+    return ""
+  else
+    return "Recording @" .. recording_register
+  end
+end
+
 require('lualine').setup {
   options = {
     theme = bubbles_theme,
@@ -46,7 +57,15 @@ require('lualine').setup {
     lualine_a = { { 'mode', right_padding = 2 } },
     lualine_b = { 'filename', { 'filename', path = 1 } },
     lualine_c = {},
-    lualine_x = { 'diagnostics' },
+    lualine_x = {
+      {
+        require("noice").api.status.mode.get,
+        cond = require("noice").api.status.mode.has,
+        fmt = show_macro_recording,
+        color = { fg = colors.red },
+      },
+      { 'diagnostics' },
+    },
     lualine_y = { 'branch', 'diff', 'progress' },
     lualine_z = {
       { 'location', left_padding = 2 },
