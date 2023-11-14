@@ -56,11 +56,11 @@ cmp.setup({
     { name = 'nvim_lsp',              priority = 2 },
     { name = 'path',                  priority = 3 },
     { name = "vim-dadbod-completion", priority = 4 },
-    { name = 'buffer',                keyword_length = 3, priority = 5 },
+    { name = 'buffer',                priority = 5 },
   },
-  preselect = 'item',
+  preselect = cmp.PreselectMode.None,
   completion = {
-    completeopt = 'menu,menuone,noinsert'
+    completeopt = 'menu,menuone,noselect'
   },
   mapping = {
     ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
