@@ -17,7 +17,8 @@ local plugins = {
       local configs = require("nvim-treesitter.configs")
 
       configs.setup({
-        ensure_installed = { "c", "lua", "vim", "vimdoc", "javascript", "python", "go", "typescript", "rust", "html",
+        ensure_installed = { "c", "lua", "vim", "vimdoc", "javascript", "python", "go",
+          "typescript", "rust", "html",
           "markdown", "bash", "gomod", "svelte" },
         sync_install = false,
         highlight = { enable = true },
@@ -101,7 +102,6 @@ local plugins = {
   }, -- Required
   { "mbbill/undotree" },
   { "lukas-reineke/indent-blankline.nvim" },
-  { "tpope/vim-fugitive" },
   {
     'numToStr/Comment.nvim',
     opts = {
@@ -169,6 +169,8 @@ local plugins = {
   },
   { 'lewis6991/gitsigns.nvim' },
   { 'AndrewRadev/tagalong.vim' },
+  -- tpope <3
+  { "tpope/vim-fugitive" },
   {
     'tpope/vim-dadbod',
     dependencies = {
@@ -176,6 +178,7 @@ local plugins = {
       'kristijanhusak/vim-dadbod-completion'
     }
   },
+  { 'tpope/vim-vinegar' },
   { "kshenoy/vim-signature" },
   {
     "folke/noice.nvim",
@@ -189,8 +192,55 @@ local plugins = {
     }
   },
   { "yamatsum/nvim-cursorline" },
+  {
+    'nvimdev/dashboard-nvim',
+    event = 'VimEnter',
+    config = function()
+      require('dashboard').setup({
+        theme = 'hyper',
+        config = {
+          header = {
 
-
+            "                                        ████                                ",
+            "                                    ████▒▒██                                ",
+            "                                  ████  ▒▒██                                ",
+            "                                ██▒▒  ▒▒▒▒▒▒██                              ",
+            "                              ██▒▒██        ██                              ",
+            "  ████                      ██▒▒██          ██                              ",
+            "██▒▒▒▒██████                ██▒▒██      ▒▒  ████                            ",
+            "██▒▒▒▒██    ████      ██████▒▒▒▒▒▒██    ▒▒▒▒██████████████                  ",
+            "██▒▒    ████▒▒▒▒██████▒▒▒▒▒▒▒▒▒▒▒▒▒▒██▒▒▒▒▒▒██▒▒▒▒▒▒▒▒▒▒▒▒████              ",
+            "██▒▒▒▒      ██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒██▒▒██▒▒▒▒▒▒▒▒▒▒▒▒▒▒██            ",
+            "  ██▒▒      ██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒██▒▒██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒████        ",
+            "  ██        ██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒██      ",
+            "  ██▒▒    ██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒██    ",
+            "  ██▒▒▒▒  ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒  ██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒██    ",
+            "    ██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒    ██▒▒▒▒▒▒▒▒▒▒████▒▒▒▒▒▒▒▒██  ",
+            "    ████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒██      ██▒▒▒▒▒▒████▒▒▒▒▒▒▒▒▒▒▒▒██  ",
+            "    ██▒▒██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒██        ██▒▒▒▒██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒██  ",
+            "      ██▒▒██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒██        ██████▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒██  ",
+            "      ██▒▒██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒██      ██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒██",
+            "        ████  ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒    ██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒██",
+            "          ██    ▒▒██████▒▒▒▒▒▒▒▒▒▒▒▒▒▒    ██▒▒  ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒██",
+            "          ██            ████▒▒▒▒▒▒▒▒▒▒    ██  ▒▒  ▒▒        ▒▒▒▒▒▒▒▒▒▒▒▒██  ",
+            "            ██                      ██  ████  ▒▒          ▒▒▒▒▒▒▒▒▒▒▒▒▒▒██  ",
+            "              ██                      ██▒▒██              ▒▒  ▒▒▒▒▒▒▒▒▒▒██  ",
+            "                ██████████████████████▒▒▒▒██                    ▒▒▒▒▒▒██    ",
+            "                      ██▒▒      ██▒▒▒▒▒▒▒▒██                    ▒▒▒▒██      ",
+            "                      ██▒▒▒▒  ██▒▒▒▒▒▒▒▒████                  ▒▒▒▒██        ",
+            "                      ██▒▒▒▒▒▒██▒▒▒▒▒▒██  ██                    ██          ",
+            "                        ██████▒▒▒▒▒▒██    ██                ████            ",
+            "                              ██████      ██          ██████                ",
+            "                                            ██    ████                      ",
+            "                                            ██████                          ",
+          },
+          packages = { enable = true },
+          footer = { "", "Make it work, make it right, make it fast. – Kent Beck" }
+        }
+      })
+    end,
+    dependencies = { { 'nvim-tree/nvim-web-devicons' } }
+  }
 }
 
 local opts = {
