@@ -11,5 +11,5 @@ sh install.sh
 ```
 
 IDEA: 
-- script for log
 - buffer manager
+- put tmux in it

@@ -35,7 +35,7 @@ vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
 
-vim.g.netrw_liststyle = 3
+vim.g.netrw_liststyle = 0
 vim.g.indent_blankline_filetype_exclude = {
   "lspinfo",
   "packer",

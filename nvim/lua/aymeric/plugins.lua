@@ -111,12 +111,9 @@ local plugins = {
   },
   { 'echasnovski/mini.nvim', version = '*' },
   {
-    'echasnovski/mini.pairs',
-    version = '*'
-  }, {
-  'nvim-lualine/lualine.nvim',
-  dependencies = { "nvim-lualine/lualine.nvim", "nvim-tree/nvim-web-devicons" }
-},
+    'nvim-lualine/lualine.nvim',
+    dependencies = { "nvim-lualine/lualine.nvim", "nvim-tree/nvim-web-devicons" }
+  },
   {
     'laytan/tailwind-sorter.nvim',
     dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-lua/plenary.nvim' },
