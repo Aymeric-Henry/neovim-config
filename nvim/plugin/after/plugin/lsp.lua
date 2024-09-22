@@ -2,7 +2,6 @@ local lsp = require('lsp-zero').preset({})
 
 lsp.ensure_installed({
   'lua_ls',
-  'tsserver',
   'eslint',
   'rust_analyzer',
   'jsonls',
@@ -40,7 +39,7 @@ lsp.format_on_save({
     ["gopls"] = { 'go' },
     ['lua_ls'] = { 'lua' },
     ['rust_analyzer'] = { 'rust' },
-    ['tsserver'] = { 'ts', 'tsx' },
+    ['eslint-lsp'] = { 'ts', 'tsx' },
     ['eslint'] = { 'ts', 'tsx', 'js', 'jsx' },
     ['json'] = { 'jsonls' },
     ['svelte'] = { 'svelte' },

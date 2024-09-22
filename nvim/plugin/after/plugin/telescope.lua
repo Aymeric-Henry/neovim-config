@@ -18,5 +18,8 @@ vim.keymap.set('n', '<leader>nb', builtin.buffers, {})
 vim.keymap.set('n', '<leader>nk', ":bprevious<CR>")
 vim.keymap.set('n', '<leader>nj', ":bnext<CR>")
 
+
 require("telescope").load_extension('harpoon')
+
+require("telescope").setup()
 require('telescope').load_extension('fzf')

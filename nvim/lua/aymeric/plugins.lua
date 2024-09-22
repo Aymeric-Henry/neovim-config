@@ -4,6 +4,7 @@ local plugins = {
     tag = '0.1.2',
     dependencies = { 'nvim-lua/plenary.nvim' }
   },
+  { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
   {
     "folke/tokyonight.nvim",
     lazy = false,
@@ -101,7 +102,10 @@ local plugins = {
     }
   }, -- Required
   { "mbbill/undotree" },
-  { "lukas-reineke/indent-blankline.nvim" },
+  {
+    "lukas-reineke/indent-blankline.nvim",
+    main = "ibl",
+  },
   {
     'numToStr/Comment.nvim',
     opts = {
@@ -159,11 +163,6 @@ local plugins = {
   },
   { 'APZelos/blamer.nvim' },
   ("nvim-treesitter/nvim-treesitter-context"),
-  {
-    'nvim-telescope/telescope-fzf-native.nvim',
-    build =
-    'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build'
-  },
   { 'lewis6991/gitsigns.nvim' },
   { 'AndrewRadev/tagalong.vim' },
   -- tpope <3
@@ -237,7 +236,7 @@ local plugins = {
       })
     end,
     dependencies = { { 'nvim-tree/nvim-web-devicons' } }
-  }
+  },
 }
 
 local opts = {
