@@ -3,12 +3,14 @@ local lsp = require('lsp-zero').preset({})
 lsp.ensure_installed({
   'lua_ls',
   'eslint',
-  'rust_analyzer',
+  'biome',
   'jsonls',
   'svelte',
   'tailwindcss',
   'gopls',
   'html',
+  'ruby_lsp',
+  'angularls',
   "sqlls"
 })
 
@@ -38,13 +40,13 @@ lsp.format_on_save({
   servers = {
     ["gopls"] = { 'go' },
     ['lua_ls'] = { 'lua' },
-    ['rust_analyzer'] = { 'rust' },
-    ['eslint-lsp'] = { 'ts', 'tsx' },
-    ['eslint'] = { 'ts', 'tsx', 'js', 'jsx' },
+    ['biome'] = { 'javascript', 'typescript' },
+    ['eslint'] = { 'javascript', 'typescript', 'angular' },
     ['json'] = { 'jsonls' },
     ['svelte'] = { 'svelte' },
     ['html'] = { 'html' },
-    ['sqlls'] = { 'sql' }
+    ['sqlls'] = { 'sql' },
+    ['angularls'] = { 'html', 'typescript' },
   }
 })
 
